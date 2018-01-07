@@ -1,0 +1,105 @@
+<div class="container inner-page">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Στοιχεία Χρέωσης</h3>
+            <form action="" class="row">
+                <div class="form-group col-sm-6">
+                    <label for="">Όνομα *</label>
+                    <input type="text" class="form-control" id="" placeholder="Ονομα">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="">Επώνυμο *</label>
+                    <input type="text" class="form-control" id="" placeholder="Επώνυμο">
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label for="">Email *</label>
+                    <input type="email" class="form-control" id="" placeholder="Email">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="">Τηλέφωνο *</label>
+                    <input type="text" class="form-control" id="" placeholder="Τηλέφωνο">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="">Χώρα *</label>
+                    <input type="text" class="form-control" id="" placeholder="Χώρα">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="">Πόλη *</label>
+                    <input type="text" class="form-control" id="" placeholder="Πόλη">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="">Διεύθυνση Αποστολής *</label>
+                    <input type="text" class="form-control" id="" placeholder="Διεύθυνση Αποστολής">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="">Διεύθυνση Χρέωσης *</label>
+                    <input type="text" class="form-control" id="" placeholder="Διεύθυνση Χρέωσης">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="">Ταχυδρομικός Κώδικας *</label>
+                    <input type="text" class="form-control" id="" placeholder="Ταχυδρομικός Κώδικας">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="">Fax</label>
+                    <input type="text" class="form-control" id="" placeholder="Fax">
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-12">
+            <hr>
+            <div class="box">
+
+                <h3>Τρόπος Αποστολής</h3>
+                <label for="ktel">
+                    <input id="ktel" type="radio" name="shippingMethod" ng-model="shippingMethod" value="ktel"> ΚΤΕΛ - 7€</label>
+                <label for="ACS">
+                    <input id="ACS" type="radio" name="shippingMethod" ng-model="shippingMethod" value="ACS"> Γενική Ταχυδρομική - 10€</label>
+                <p ng-show="shippingMethod == 'ktel'">Είναι η γρηγορότερη αποστολή ιδίως για γύρη και βασιλικό πολτό που είναι ευπαθή, αλλά θα πρέπει να πάτε στα
+                    ΚΤΕΛ να παραλάβετε το δέμα και να έχετε βάλει από πριν το ποσό σε έναν από τους λογαριασμούς τραπέζης,
+                    που βλέπετε δεξιά.!</p>
+                <!-- <h2 ng-show="shippingMethod == 'second'">This is the other content!</h2> -->
+
+            </div>
+            <hr>
+            <div class="box">
+                <h3>Τρόπος Πληρωμής</h3>
+                <label>
+                    <input id="payOnDelivery" type="radio" name="paymentGetaway" ng-model="paymentGetaway" value="payOnDelivery"> Αντικαταβολή - 3€</label>
+                <label>
+                    <input id="bankPayment" type="radio" name="paymentGetaway" ng-model="paymentGetaway" value="bankPayment"> Τραπεζικη Κατάθεση</label>
+                <div ng-show="paymentGetaway == 'bankPayment'">
+                    <h5>Πειραιώς:</h5>
+                    <ul>
+                        <li> Αρ. Λογαριασμού: 55 24 033 744 169</li>
+                        <li>ΙΒΑΝ: GR 22 0172 5240 0055 2403 3744 169</li>
+                        <li>SWIFT: BIC PIR B GR AA</li>
+                    </ul>
+                    <h5>Alpha Bank</h5>
+                    <ul>
+                        <li>Αρ. Λογαριασμού: 679 00 231 000 46 46</li>
+                        <li>IBAN: GR 27 0140 6790 6790 0231 000 46 46</li>
+                    </ul>
+                    <h5>Εθνική</h5>
+                    <ul>
+                        <li>Αρ.Λογαριασμού: 3363 75 36 80 10</li>
+                        <li>ΙΒΑΝ: GR 82 0110 363 000 00 363 75 36 80 10</li>
+                    </ul>
+
+                </div>
+            </div>
+            <!-- ./ BOX -->
+        </div>
+
+    </div>
+    <!-- ./ ROW -->
+    <hr>
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <button class="btn-fill">Ολοκλήρωση Παραγγελίας</button>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,130 @@
+a,
+a:hover,
+a:focus,
+a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* Buttons */
+
+.btn-outline {
+    display: inline-block;
+    color: inherit;
+    border: 1px solid #ccc;
+    background: transparent;
+    padding: .75rem;
+}
+
+.btn-fill {
+    display: inline-block;
+    color: white;
+    background: black;
+    border: 1px solid black;
+    /* border: none; */
+    padding: .75rem;
+}
+
+a.btn-fill {
+    color: white;
+}
+
+
+/* Inner Pages */
+
+.inner-page {
+    padding: 3rem 1rem;
+}
+
+.heading-row,
+.section-padding,
+.home-page-heading {
+    padding-bottom: 1.5rem;
+}
+
+.home-page-heading {
+    margin: 0;
+}
+
+.qty-test {
+    padding: .75rem 1rem;
+}
+
+.quantity-btn {
+    background: black;
+    color: white;
+    border: 1px solid black;
+}
+
+.quantity-input {
+    border: 1px solid black;
+    max-width: 60px;
+    text-align: center;
+}
+
+.popupMsg {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2.4rem;
+    background: #f9f8f8;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 15px 0 rgba;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    color: black;
+    font-family: Roboto;
+    font-size: 1.75rem;
+    font-weight: 300;
+    position: fixed;
+    top: calc(100% + 170px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s ease-in-out;
+    width: 90%;
+}
+
+.popupMsg.showMessage {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* min-width: 300px; */
+    transition: all 1s ease-in-out;
+}
+
+.slick-prev,
+.slick-next {
+    width: auto;
+    height: auto;
+}
+
+.slick-prev:before {
+    display: block;
+    content: url(../images/svg/back.svg);
+    background-size: 28px 28px;
+    width: 28px;
+    height: 28px;
+}
+
+.slick-prev {
+    left: -22px;
+}
+
+.slick-next:before {
+    display: block;
+    content: url(../images/svg/next.svg);
+    background-size: 28px 28px;
+    width: 28px;
+    height: 28px;
+}
+
+.slick-next {
+    right: -22px;
+}
+
+.slick-slider {
+    width: 90%;
+    margin: 0 auto;
+}

@@ -1,0 +1,200 @@
+/* =====================================================
+                        Navbar 
+===================================================== */
+
+.top-bar {
+    background-color: #6d5a22!important;
+    /* background: #886601; */
+    color: #dcdcdc;
+    padding: .5rem 0;
+}
+
+nav {
+    /* background-color: #6d5a22!important; */
+    background: #886601;
+}
+
+.navbar-toggler {
+    color: rgb(246, 241, 132);
+    border-color: rgb(146, 172, 37);
+}
+
+.navbar-nav a.nav-link {
+    color: #dcdcdc;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(246, 241, 132)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+ul.navbar-nav {
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+                        Footer 
+===================================================== */
+
+footer {
+    position: relative;
+    background-color: #504115!important;
+    color: #ccc;
+    padding: 3rem 0;
+}
+
+footer .nav-link {
+    display: block;
+    padding: .5rem 1rem;
+}
+
+
+/* =====================================================
+                    Product Listing 
+===================================================== */
+
+
+/* .product-row {
+    padding-top: 1.5rem;
+} */
+
+
+/* .product-col {
+    margin-bottom: 1.5rem;
+} */
+
+.product-desc {
+    padding: .5rem 0;
+}
+
+.product-listing .product-desc .product-title {
+    font-size: 1.25rem;
+}
+
+.product-desc p {
+    margin: 0;
+}
+
+.product-desc .price-tag {
+    font-size: 1.25rem;
+}
+
+.product-desc .price-num {
+    font-size: 1.5rem;
+}
+
+.normal-price {
+    font-size: 1rem;
+    text-decoration: line-through;
+}
+
+.sales-price {
+    color: #ca0b0b;
+    font-size: 1.5rem;
+}
+
+.product-row button {
+    width: 100%;
+}
+
+
+/* =====================================================
+                    Product Page 
+===================================================== */
+
+.product-page .add-to-cart {
+    padding: .75rem 2rem;
+    margin-left: .5rem;
+}
+
+.product-page ul#pills-tab {
+    background: #e0e0e0;
+    padding: 1rem .5rem;
+}
+
+.product-page .nav-pills .nav-link.active,
+.product-page .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #886601;
+}
+
+.product-page .tab-pane {
+    border: 8px solid #e0e0e0;
+    border-top: 0;
+    padding: 2rem;
+}
+
+
+/* =====================================================
+                    Checkout Page 
+===================================================== */
+
+
+/* #test:hover .hover {
+    display: none;
+} */
+
+
+/* =====================================================
+                        Slick 
+===================================================== */
+
+
+/* .slick-prev,
+.slick-next {
+    background: #155724;
+} */
+
+.slick-image-wrapper {
+    padding: 0 1rem;
+}
+
+
+/* .slick-prev {
+    left: -9px;
+}
+
+.slick-next {
+    right: -9px;
+} */
+
+
+/* =====================================================
+                        Bootstrap 
+===================================================== */
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #8da225;
+}
+
+.carousel {
+    padding-bottom: 5rem;
+}
+
+.home-padding {
+    padding-bottom: 5rem;
+}
+
+
+/* =====================================================
+                        Media Queries 
+===================================================== */
+
+@media only screen and (max-width: 535px) {
+    form#myform {
+        text-align: center;
+    }
+    .product-page .add-to-cart {
+        padding: .75rem 3rem;
+        margin-left: 0;
+        margin-top: .5rem;
+    }
+    .quantity-input {
+        max-width: 133px;
+    }
+    .qty-test {
+        padding: .75rem 1.5rem;
+    }
+}
