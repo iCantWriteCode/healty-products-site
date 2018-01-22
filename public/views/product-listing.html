@@ -8,28 +8,27 @@
 
     </div> -->
     <div class="row product-row">
-        <div class="col-lg-4 col-md-6 col-sm-12 product-col" ng-repeat="x in products">
-            <a href="#/product-page/">
-                <img src="http://via.placeholder.com/600x600" alt="" class="img-fluid">
+        <div class="col-lg-4 col-md-6 col-sm-12 product-col" ng-repeat="product in products">
+            <a ng-href="#/product/{{product.slug}}">
+                <img ng-src="{{product.featuredImage}}" err-src="http://lorempixel.com/output/nature-h-g-640-1027-10.jpg" class="img-fluid">
             </a>
             <div class="product-desc">
                 <p class="product-title">
-                    <span style="    display: inline-block;
-                    max-width: 80%;">{{x.title}}</span>
+                    <span style="display: inline-block; max-width: 80%;">{{product.name}}</span>
                     <span class="float-right">{{x.ml}}</span>
                 </p>
                 <p>
                     <span class="price-tag">Τιμή:</span>
-                    <span ng-show="x.salesPrice === '' || x.salesPrice === undefined">
-                        <span class="price-num"> {{x.price}}€</span>
+                    <span ng-if="!product.salesPrice">
+                        <span class="price-num"> {{product.price}}€</span>
                     </span>
-                    <span ng-show="x.salesPrice != '' && x.salesPrice !== undefined">
-                        <span class="normal-price">{{x.price}}€</span>
-                        <span class="sales-price">{{x.salesPrice}}€</span>
+                    <span ng-if="!!product.salesPrice">
+                        <span class="normal-price">{{product.price}}€</span>
+                        <span class="sales-price">{{product.salesPrice}}€</span>
                     </span>
                 </p>
             </div>
-            <button ng-click="addToCart($index);" class="btn-fill">Add to cart</button>
+            <button ng-click="addToCart(product);" class="btn-fill">Add to cart</button>
             <hr>
         </div>
         <!-- <div class="col-sm-4">

@@ -1,23 +1,19 @@
 <div class="container inner-page product-page">
     <div class="row heading-row">
         <div class="col-md-4">
-            <img src="http://via.placeholder.com/600x600" alt="" class="img-fluid">
+            <img src="{{product.featuredImage}}" err-src="http://lorempixel.com/output/nature-h-g-640-1027-10.jpg" alt="" class="img-fluid">
         </div>
         <div class="col-md-8">
             <h3>Title</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque alias fuga sunt reprehenderit cupiditate, quibusdam
-                at accusantium eligendi aspernatur! Veniam cumque eligendi voluptatum magnam illo facilis tenetur odit adipisci
-                doloribus.
+            <p>
+                {{product.name}}
             </p>
             <p>
-                <form id='myform'>
-                    <button ng-click="decrement()" class="quantity-btn qty-test" ng-disabled="qty<=1">-</button>
-                    <input ng-model="qty" type='text' name='quantity' class="qty quantity-input qty-test" min="1" oninput="this.value=this.value.slice(0,this.maxLength||1/1);this.value=(this.value   < 1) ? (1/1) : this.value;"
-                    />
-                    <button ng-click="increment()" class="quantity-btn qty-test">+</button>
+                <button type="button" class="quantity-btn qty-test" ng-click="decreaseAmount()">-</button>
+                <input class="qty quantity-input qty-test" ng-model="amount" type="number" min="1"/>
+                <button type="button" class="quantity-btn qty-test" ng-click="increaseAmount()" >+</button>
 
-                    <button class="btn-fill add-to-cart">Προσθήκη στο καλάθι</button>
-                </form>
+                <button class="btn-fill add-to-cart" ng-click="addToCart(product)">Προσθήκη στο καλάθι</button>
 
             </p>
         </div>

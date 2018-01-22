@@ -1,27 +1,31 @@
-const app = angular.module('healthy_product_app', ['ngRoute', 'slick']);
+const app = angular.module('healthy_product_app', [ 'ngRoute', 'slick' ]);
 
-var cart = [];
-if (!localStorage.cart) localStorage.setItem('cart', JSON.stringify(cart)); // Init Empty cart if not defined
+const url = 'http://localhost:4000';
 
-app.config(function ($routeProvider, $locationProvider) {
+if (!localStorage.cart) localStorage.setItem('cart', JSON.stringify([]));
+
+app.config(function($routeProvider, $locationProvider) {
 	$locationProvider.hashPrefix('');
 	$routeProvider
 		.when('/', {
-			templateUrl: '../views/home.html'
+			templateUrl: './views/home.html'
 		})
-		.when('/product-listing', {
-			templateUrl: '../views/product-listing.html'
+		.when('/products/:categories*', {
+			templateUrl: './views/product-listing.html',
+			controller: 'products'
 		})
-		.when('/product-page', {
-			templateUrl: '../views/product-page.html'
+		.when('/product/:slug', {
+			templateUrl: './views/product-page.html',
+			controller: 'product'
 		})
 		.when('/cart', {
-			templateUrl: '../views/cart.html'
+			templateUrl: './views/cart.html',
+			controller: 'cart'
 		})
 		.when('/checkout', {
 			templateUrl: '../views/checkout.html'
 		})
 		.when('/contact', {
-			templateUrl: '../views/contact.html'
+			templateUrl: './views/contact.html'
 		});
 });

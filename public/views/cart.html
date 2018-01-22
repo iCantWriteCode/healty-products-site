@@ -10,35 +10,24 @@
                 <thead>
                     <tr>
                         <th scope="col">Όνομα</th>
-                        <th scope="col">ML</th>
+                        <th scope="col">Βάρος</th>
                         <th scope="col">Ποσότητα</th>
                         <th scope="col">Τιμή</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">Γύρη Φρέσκια</th>
-                        <td>10kg</td>
-                        <td>x1</td>
-                        <td>200€</td>
+                    <tr ng-repeat="product in cart track by $index">
+                        <th scope="row">{{product.name}}</th>
+                        <td>{{product.weight | number: 3}}kg</td>
+                        <td>x{{product.amount}}</td>
+                        <td>{{product.salesPrice || product.price | number: 2}}€</td>
                     </tr>
-                    <tr>
-                        <th scope="row">Γύρη Φρέσκια</th>
-                        <td>5kg</td>
-                        <td>x2</td>
-                        <td>100€</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Γύρη Φρέσκια</th>
-                        <td>10kg</td>
-                        <td>x1</td>
-                        <td>200€</td>
-                    </tr>
+                   
                     <tr style="border: 1px solid rgba(0,0,0,.9);">
-                        <th colspan="3" style="border-top: 1px solid rgba(0,0,0,.9);">Συνολο</th>
+                        <th colspan="3" style="border-top: 1px solid rgba(0,0,0,.9);">Σύνολο</th>
 
                         <!-- <td>Synolo</td> -->
-                        <td style="border-top: 1px solid rgba(0,0,0,.9);">200€</td>
+                        <td style="border-top: 1px solid rgba(0,0,0,.9);">{{getTotal(cart) | number: 2}}€</td>
                     </tr>
                 </tbody>
             </table>

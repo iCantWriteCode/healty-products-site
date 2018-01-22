@@ -28,10 +28,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-sanitize.js"></script>
 
-  <!--  -->
+  <!-- Angular -->
   <script src="./js/angularApp.js"></script>
-  <script src="./js/mainCtrl.js"></script>
-  <script src="./js/dummyCtrl.js"></script>
+
+  <!-- Controllers -->
+  <script src="./js/controllers/productsCtrl.js"></script>
+  <script src="./js/controllers/productPageCtrl.js"></script>
+  <script src="./js/controllers/navBarCtrl.js"></script>
+  <script src="./js/controllers/cartCtrl.js"></script>
+
+  <!-- Services -->
+  <script src="./js/services/productsServices.js"></script>
+  <script src="./js/services/cartServices.js"></script>
+  <script src="./js/services/slug.js"></script>
+
+  <!-- Directives -->
+  <script src="./js/directives/uiMessage.js"></script>
+  <script src="./js/directives/errSrc.js"></script>
 
 
   <script src="./js/smoothScrollService.js"></script>
@@ -39,20 +52,11 @@
 </head>
 
 <body ng-app="healthy_product_app" ng-cloak>
-  <div ng-controller="dummyCtrl">
-
-
-
-    <div ng-include="'./views/main-site-templates/navbar.html'"></div>
-
+  <div>
+    <div ng-controller="navBar" ng-include="'./views/main-site-templates/navbar.html'"></div>
     <div ng-view></div>
-
     <div ng-include="'./views/main-site-templates/footer.html'"></div>
-
   </div>
-
-  </div>
-
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>

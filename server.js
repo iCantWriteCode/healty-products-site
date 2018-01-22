@@ -1,14 +1,15 @@
 // Simple server for servis SPA applications
 const express = require('express');
+const path = require('path');
+
 const app = express();
-var path = require('path');
 
 // view engine setup
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, ''));
 app.set('view engine', 'ejs');
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
 	res.render('index');
 });
 
