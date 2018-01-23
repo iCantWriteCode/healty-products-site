@@ -7,7 +7,10 @@ app.controller('product', function($scope, $routeParams, $products, $cart) {
 	$scope.addToCart = (product) => {
 		product.amount = $scope.amount;
 		$cart.addProduct(product);
+
+		$scope.message = `Προστέθηκαν ${product.amount} τεμάχια προϊόντος στο καλάθι`;
 	};
+
 	function getProductInfo() {
 		$products.getOneBySlug($routeParams.slug).then((product) => {
 			$scope.product = product;

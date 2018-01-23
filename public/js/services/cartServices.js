@@ -17,7 +17,7 @@ app.service('$cart', function($rootScope) {
 				return;
 			}
 
-			if (!product.amount) product.amount = 1;
+			if (!product.amount) product.amount = 1; // Assume 1 piece of product
 			cart.push(product);
 			localStorage.setItem('cart', JSON.stringify(cart));
 		},

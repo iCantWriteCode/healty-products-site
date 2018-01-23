@@ -4,7 +4,11 @@ app.controller('products', function($scope, $routeParams, $products, $slug, $car
 
 	getProducts();
 
-	$scope.addToCart = (product) => $cart.addProduct(product);
+	$scope.addToCart = (product) => {
+		product.amount = 1;
+		$cart.addProduct(product);
+		$scope.message = 'Το προϊόν προστέθηκε στο καλάθι';
+	};
 
 	function getProducts() {
 		$products

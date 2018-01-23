@@ -8,13 +8,21 @@
             <p>
                 {{product.name}}
             </p>
+            <span class="price-tag">Τιμή:</span>
+            <span ng-if="!product.salesPrice">
+                <span class="price-num"> {{product.price | number: 2}}€</span>
+            </span>
+            <span ng-if="!!product.salesPrice">
+                <span class="normal-price">{{product.price | number: 2}}€</span>
+                <span class="sales-price">{{product.salesPrice | number: 2}}€</span>
+            </span>
             <p>
                 <button type="button" class="quantity-btn qty-test" ng-click="decreaseAmount()">-</button>
                 <input class="qty quantity-input qty-test" ng-model="amount" type="number" min="1"/>
                 <button type="button" class="quantity-btn qty-test" ng-click="increaseAmount()" >+</button>
 
                 <button class="btn-fill add-to-cart" ng-click="addToCart(product)">Προσθήκη στο καλάθι</button>
-
+                <ui-message message="message" dur="3000"></ui-message>
             </p>
         </div>
     </div>
