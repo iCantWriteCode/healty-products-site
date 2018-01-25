@@ -2,7 +2,7 @@ app.service('$shippings', function($http) {
 	return {
 		getAll() {
 			return $http
-				.get(`${url}/shippings/all/admin`, {
+				.get(`${url}/shippings/all`, {
 					headers: {
 						token: localStorage.token
 					}
