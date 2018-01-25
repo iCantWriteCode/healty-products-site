@@ -4,9 +4,7 @@
             <h3 class="text-center">Προϊόντα</h3>
         </div>
     </div>
-    <!-- <div class="row">
 
-    </div> -->
     <div class="row product-row">
         <div class="col-lg-4 col-md-6 col-sm-12 product-col" ng-repeat="product in products">
             <a ng-href="#/product/{{product.slug}}">
@@ -29,9 +27,9 @@
                 </p>
             </div>
             <button ng-click="addToCart(product);" class="btn-fill">Add to cart</button>
-            <ui-message message="message" dur="3000"></ui-message>
             <hr>
         </div>
+        <ui-message message="message" dur="3000"></ui-message>
     </div>
     <div class="row">
         <div class="col-12">
