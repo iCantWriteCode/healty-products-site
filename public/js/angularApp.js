@@ -10,7 +10,7 @@ app.config(function($routeProvider, $locationProvider) {
 		.when('/', {
 			templateUrl: './views/home.html'
 		})
-		.when('/products/:categories*', {
+		.when('/products/:categories*/:page', {
 			templateUrl: './views/product-listing.html',
 			controller: 'products'
 		})

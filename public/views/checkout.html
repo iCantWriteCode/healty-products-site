@@ -54,13 +54,14 @@
                 <h3>Τρόπος Αποστολής</h3>
                 <div ng-repeat="shipping in shippings track by $index">
                     <label>
-                        <input type="radio" ng-model="order.shippingMethod" value="shipping.company">
+                        <input type="radio" ng-model="order.shipping.company" ng-value="shipping.company">
                         {{shipping.company}} {{shipping.finalPrice}}
                     </label>
+                    <p ng-if="!!shipping.description && order.shipping.company === shipping.company">
+                        {{shipping.description}}
+                    </p>
                 </div>
-                <p ng-if="order.shippingMethod === 'ktel'">Είναι η γρηγορότερη αποστολή ιδίως για γύρη και βασιλικό πολτό που είναι ευπαθή, αλλά θα πρέπει να πάτε στα ΚΤΕΛ να παραλάβετε
-                    το δέμα και να έχετε βάλει από πριν το ποσό σε έναν από τους λογαριασμούς τραπέζης, που βλέπετε δεξιά.!
-                </p>
+
 
             </div>
             <hr>
