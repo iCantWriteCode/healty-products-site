@@ -21,6 +21,14 @@ app.service('$cart', function($rootScope) {
 			cart.push(product);
 			localStorage.setItem('cart', JSON.stringify(cart));
 		},
-		increaseProductAmount
+		removeProduct(product) {
+			const cart = JSON.parse(localStorage.cart);
+
+			const i = cart.findIndex((productInCart) => product._id === productInCart._id);
+			cart.splice(i, 1);
+
+			localStorage.setItem('cart', JSON.stringify(cart));
+			$rootScope.$broadcast('cart changed');
+		}
 	};
 });
