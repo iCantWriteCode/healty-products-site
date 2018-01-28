@@ -8,6 +8,13 @@ app.service('$products', function($http) {
 		},
 		getByCategory(category, page) {
 			return $http.post(`${url}/products/by-category/${category}/`, { page }).then((res) => res.data);
+		},
+
+		totalWeight: (cart) => {
+			let totalWeight = 0;
+			cart.forEach((product) => (totalWeight += product.weight * product.amount));
+
+			return totalWeight;
 		}
 	};
 });
