@@ -36,6 +36,10 @@
                     <label for="">Ταχυδρομικός Κώδικας *</label>
                     <input type="text" class="form-control" placeholder="Ταχυδρομικός Κώδικας" ng-model="order.shipping.zip" required>
                 </div>
+                <div>
+                    <label for="">Σχόλια Παραγγελίας</label>
+                    <textarea class="form-control" rows="3" placeholder="Περιγραφή" ng-model="order.comments"></textarea>
+                </div>
             </div>
 
             <div class="col-md-12">
@@ -58,26 +62,23 @@
                 <div class="box">
                     <h3>Τρόπος Πληρωμής</h3>
                     <label>
-                        <input id="payOnDelivery" type="radio" name="paymentGetaway" ng-model="selectedPaymentMethod" ng-value="{name: 'Αντικαταβολή', price: 3.00}" required> Αντικαταβολή - 3€</label>
+                        <input id="payOnDelivery" type="radio" name="payment-method" ng-model="order.payment" ng-value="{method: 'Αντικαταβολή', price: 3.00}" required> Αντικαταβολή - 3€</label>
                     <label>
-                        <input id="bankPayment" type="radio" name="paymentGetaway" ng-model="selectedPaymentMethod" ng-value="{name: 'Τραπεζική Κατάθεση', price: 0}" required>Τραπεζικη Κατάθεση</label>
-                    <div ng-if="paymentGetaway === 'Τραπεζική Κατάθεση'">
+                        <input id="bankPayment" type="radio" name="payment-method" ng-model="order.payment" ng-value="{method: 'Τραπεζική Κατάθεση', price: 0}" required>Τραπεζική Κατάθεση</label>
+                    <div ng-if="order.payment.method === 'Τραπεζική Κατάθεση'">
                         <h5>Πειραιώς:</h5>
-                        <ul>
+                            <input type="radio" name="payment-bank" required ng-model="order.payment.bank" value="Πειραιώς">
                             <li>Αρ. Λογαριασμού: 55 24 033 744 169</li>
                             <li>ΙΒΑΝ: GR 22 0172 5240 0055 2403 3744 169</li>
                             <li>SWIFT: BIC PIR B GR AA</li>
-                        </ul>
                         <h5>Alpha Bank</h5>
-                        <ul>
+                            <input type="radio" name="payment-bank" required ng-model="order.payment.bank" value="Alpha Bank">
                             <li>Αρ. Λογαριασμού: 679 00 231 000 46 46</li>
                             <li>IBAN: GR 27 0140 6790 6790 0231 000 46 46</li>
-                        </ul>
                         <h5>Εθνική</h5>
-                        <ul>
+                            <input type="radio" name="payment-bank" required ng-model="order.payment.bank" value="Εθνική">
                             <li>Αρ.Λογαριασμού: 3363 75 36 80 10</li>
                             <li>ΙΒΑΝ: GR 82 0110 363 000 00 363 75 36 80 10</li>
-                        </ul>
                     </div>
                 </div>
                 <!-- ./ BOX -->

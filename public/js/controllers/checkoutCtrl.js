@@ -9,11 +9,10 @@ app.controller('checkout', function($scope, $products, $shippings, $payment) {
 		.getAll()
 		.then((shippings) => {
 			shippings.forEach((shipping) => calculateShippingCost(shipping));
-
 			$scope.shippings = shippings;
-			$scope.total = $payment.total(subTotal, shippings[0].price);
 
-			configOrder($scope.shippings[0], $scope.total);
+			$scope.total = $payment.total(subTotal, shippings[0].price);
+			configOrder(shippings[0], $scope.total);
 		})
 		.catch((res) => console.warn(res));
 
@@ -33,6 +32,7 @@ app.controller('checkout', function($scope, $products, $shippings, $payment) {
 		$scope.order = {
 			customer: { firstname: '', lastname: '', phone: '', email: '' },
 			shipping: { address: '', city: '', country: '', zip: '', company: '', price: '' },
+			payment: { method: '', price: '', bank: '' },
 			items: [],
 			total: 0
 		};
