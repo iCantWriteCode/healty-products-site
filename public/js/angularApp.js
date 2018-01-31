@@ -10,7 +10,7 @@ app.config(function($routeProvider, $locationProvider) {
 		.when('/', {
 			templateUrl: './views/home.html'
 		})
-		.when('/products/:categories*', {
+		.when('/products/:categories*/:page', {
 			templateUrl: './views/product-listing.html',
 			controller: 'products'
 		})
@@ -23,7 +23,8 @@ app.config(function($routeProvider, $locationProvider) {
 			controller: 'cart'
 		})
 		.when('/checkout', {
-			templateUrl: '../views/checkout.html'
+			templateUrl: '../views/checkout.html',
+			controller: 'checkout'
 		})
 		.when('/contact', {
 			templateUrl: './views/contact.html'

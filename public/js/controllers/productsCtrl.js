@@ -1,8 +1,9 @@
 app.controller('products', function($scope, $routeParams, $products, $slug, $cart) {
 	const categories = $routeParams.categories.split('/');
 	const searchCategory = categories[categories.length - 1];
+	const page = $routeParams.page;
 
-	getProducts();
+	getProducts(page);
 
 	$scope.addToCart = (product) => {
 		product.amount = 1;
@@ -10,10 +11,20 @@ app.controller('products', function($scope, $routeParams, $products, $slug, $car
 		$scope.message = 'Το προϊόν προστέθηκε στο καλάθι';
 	};
 
-	function getProducts() {
+	function getProducts(page = 1) {
 		$products
-			.getByCategory(searchCategory)
-			.then((products) => ($scope.products = products))
+			.getByCategory(searchCategory, page)
+			.then(({ products, pages }) => {
+				$scope.products = products;
+				createPagination(pages);
+			})
 			.catch((res) => console.warn(res));
+	}
+
+	function createPagination(totalPages) {
+		$scope.categories = $routeParams.categories;
+		$scope.totalPages = totalPages;
+		$scope.pages = new Array(totalPages);
+		$scope.currentPage = $routeParams.page;
 	}
 });
