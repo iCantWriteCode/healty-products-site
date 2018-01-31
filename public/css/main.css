@@ -6,7 +6,6 @@ a:active {
     text-decoration: none;
 }
 
-
 /* Buttons */
 
 .btn-outline {
@@ -29,7 +28,6 @@ a:active {
 a.btn-fill {
     color: white;
 }
-
 
 /* Inner Pages */
 
@@ -127,4 +125,28 @@ a.btn-fill {
 .slick-slider {
     width: 90%;
     margin: 0 auto;
+}
+
+.sucess-msg {
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    border: 1px solid #ccc;
+    background: white;
+    position: fixed;
+    /* top: 50vh; */
+    margin: 0 auto;
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    line-height: 200px;
+}
+
+.check {
+    stroke-dasharray: 130px 130px;
+    stroke-dashoffset: 130px;
+    -webkit-transition: stroke-dashoffset 4.1s linear 0s;
+    transition: stroke-dashoffset 500ms ease-in-out;
 }
