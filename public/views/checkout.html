@@ -1,38 +1,38 @@
-<div class="container inner-page">
-    <form ng-submit="submitOrder(order)">
-        <div class="row">
-            <div class="col-md-12">
-                <h3>Στοιχεία Χρέωσης</h3>
-                <div class="form-group col-sm-6">
+<div class="container-fluid checkout-page inner-page">
+    <form class="row" ng-submit="submitOrder(order)">
+        <div class="col-md-6">
+            <h3>Στοιχεία Χρέωσης</h3>
+            <div class="row">
+                <div class="form-group col-md-6">
                     <label for="">Όνομα *</label>
                     <input type="text" class="form-control" placeholder="Ονομα" ng-model="order.customer.firstname" required>
                 </div>
-                <div class="form-group col-sm-6">
+                <div class="form-group col-md-6">
                     <label for="">Επώνυμο *</label>
                     <input type="text" class="form-control" placeholder="Επώνυμο" ng-model="order.customer.lastname" required>
                 </div>
 
-                <div class="form-group col-sm-6">
+                <div class="form-group col-md-6">
                     <label for="">Email *</label>
                     <input type="email" class="form-control" placeholder="Email" ng-model="order.customer.email" required>
                 </div>
-                <div class="form-group col-sm-6">
+                <div class="form-group col-md-6">
                     <label for="">Τηλέφωνο *</label>
                     <input type="text" class="form-control" placeholder="Τηλέφωνο" ng-model="order.customer.phone" required>
                 </div>
-                <div class="form-group col-sm-6">
+                <div class="form-group col-md-6">
                     <label for="">Χώρα *</label>
                     <input type="text" class="form-control" placeholder="Χώρα" ng-model="order.shipping.country" required>
                 </div>
-                <div class="form-group col-sm-6">
+                <div class="form-group col-md-6">
                     <label for="">Πόλη *</label>
                     <input type="text" class="form-control" placeholder="Πόλη" ng-model="order.shipping.city" required>
                 </div>
-                <div class="form-group col-sm-6">
+                <div class="form-group col-md-6">
                     <label for="">Διεύθυνση Αποστολής *</label>
                     <input type="text" class="form-control" placeholder="Διεύθυνση Αποστολής" ng-model="order.shipping.address" required>
                 </div>
-                <div class="form-group col-sm-6">
+                <div class="form-group col-md-6">
                     <label for="">Ταχυδρομικός Κώδικας *</label>
                     <input type="text" class="form-control" placeholder="Ταχυδρομικός Κώδικας" ng-model="order.shipping.zip" required>
                 </div>
@@ -41,56 +41,99 @@
                     <textarea class="form-control" rows="3" placeholder="Περιγραφή" ng-model="order.comments"></textarea>
                 </div>
             </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
 
-            <div class="col-md-12">
-                <hr>
-                <div class="box">
-
+                <div class="box col-md-12">
                     <h3>Τρόπος Αποστολής</h3>
                     <div ng-repeat="shipping in shippings track by $index">
                         <label>
-                            <input type="radio" ng-model="order.shipping.company" ng-value="shipping.company" ng-change="changeShippingMethod(shipping)">
-                            {{shipping.company}} {{shipping.price | number: 2}}€
+                            <input type="radio" ng-model="order.shipping.company" ng-value="shipping.company" ng-change="changeShippingMethod(shipping)"> {{shipping.company}} - {{shipping.price | number: 2}}€
                         </label>
                         <p ng-if="!!shipping.description && order.shipping.company === shipping.company">
                             {{shipping.description}}
                         </p>
                     </div>
-                    <p>{{total}}</p>
+
+
                 </div>
-                <hr>
-                <div class="box">
+                <div class="box col-md-12">
                     <h3>Τρόπος Πληρωμής</h3>
-                    <label>
-                        <input id="payOnDelivery" type="radio" name="payment-method" ng-model="order.payment" ng-value="{method: 'Αντικαταβολή', price: 3.00}" required> Αντικαταβολή - 3€</label>
-                    <label>
-                        <input id="bankPayment" type="radio" name="payment-method" ng-model="order.payment" ng-value="{method: 'Τραπεζική Κατάθεση', price: 0}" required>Τραπεζική Κατάθεση</label>
+                    <div>
+                        <label>
+                            <input id="payOnDelivery" type="radio" name="paymentGetaway" ng-model="order.payment" ng-value="{method: 'Αντικαταβολή', price: 3.00}"
+                                required> Αντικαταβολή - 3€
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input id="bankPayment" type="radio" name="paymentGetaway" ng-model="order.payment" ng-value="{method: 'Τραπεζική Κατάθεση', price: 0}"
+                                required>Τραπεζικη Κατάθεση
+                        </label>
+                    </div>
                     <div ng-if="order.payment.method === 'Τραπεζική Κατάθεση'">
-                        <h5>Πειραιώς:</h5>
-                            <input type="radio" name="payment-bank" required ng-model="order.payment.bank" value="Πειραιώς">
+                        <h5 style="margin:0;">Πειραιώς:</h5>
+                        <ul>
                             <li>Αρ. Λογαριασμού: 55 24 033 744 169</li>
                             <li>ΙΒΑΝ: GR 22 0172 5240 0055 2403 3744 169</li>
                             <li>SWIFT: BIC PIR B GR AA</li>
-                        <h5>Alpha Bank</h5>
-                            <input type="radio" name="payment-bank" required ng-model="order.payment.bank" value="Alpha Bank">
+                        </ul>
+                        <h5 style="margin:0;">Alpha Bank</h5>
+                        <ul>
                             <li>Αρ. Λογαριασμού: 679 00 231 000 46 46</li>
                             <li>IBAN: GR 27 0140 6790 6790 0231 000 46 46</li>
-                        <h5>Εθνική</h5>
-                            <input type="radio" name="payment-bank" required ng-model="order.payment.bank" value="Εθνική">
+                        </ul>
+                        <h5 style="margin:0;">Εθνική</h5>
+                        <ul>
                             <li>Αρ.Λογαριασμού: 3363 75 36 80 10</li>
                             <li>ΙΒΑΝ: GR 82 0110 363 000 00 363 75 36 80 10</li>
                     </div>
                 </div>
-                <!-- ./ BOX -->
             </div>
-
         </div>
-        <!-- ./ ROW -->
         <hr>
-        <div class="row">
-            <div class="col-md-12 text-right">
-                <button type="submit" class="btn-fill">Ολοκλήρωση Παραγγελίας</button>
-            </div>
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <!-- <th scope="col"> </th> -->
+                        <th scope="col">Προϊόν</th>
+                        <!-- <th scope="col">First</th> -->
+                        <th scope="col" class="text-center">Ποσότητα</th>
+                        <th scope="col" class="text-right">Τιμή Μονάδας</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in cart track by $index">
+                        <!-- <td>
+
+                        </td> -->
+                        <th scope="row">
+                            <!-- <img class="mouse-hand" src="./images/svg/remove-from-cart.svg" style="max-width: 25px;margin-right: 10px;" ng-click="removeFromCart(product)"> -->
+                            <a ng-href="#/product/{{product.slug}}">{{product.name}}</a>
+                        </th>
+                        <!-- <td>{{product.weight | number: 2}}kg</td> -->
+                        <td class="text-center" style=" width: 145px;">x{{product.amount}}</td>
+                        <td class="text-right" style=" width: 145px;">{{product.salesPrice || product.price | number: 2}}€</td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-right">
+                            <strong>Σύνολο</strong>
+                            <span>{{total}}€</span>
+                        </td>
+                        <!-- <td></td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-12">
+
+            <hr>
+            <!-- <p>{{total}}</p> -->
+            <a href="/#cart" class="btn-fill">Επιστροφή Στο Καλάθι</a>
+            <button type="submit" class="btn-fill float-right">Ολοκλήρωση Παραγγελίας</button>
         </div>
     </form>
 </div>

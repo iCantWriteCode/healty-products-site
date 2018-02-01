@@ -1,4 +1,4 @@
-<div class="top-bar">
+<div class="top-bar" ng-controller="topBarCtrl">
   <div class="container">
     <div class="row d-flex">
       <div class="col-sm-3 align-self-center text-center">
@@ -16,6 +16,7 @@
       <div class="col-sm-3  align-self-center text-right">
         <a href="#/cart">
           <img src="./images/svg/shopping-cart.svg" alt="" class="img-fluid" style="max-width:35px;">
+          <span class="cart-counter">{{cart.length}}</span>
         </a>
       </div>
     </div>

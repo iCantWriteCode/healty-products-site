@@ -1,10 +1,10 @@
-const app = angular.module('healthy_product_app', [ 'ngRoute', 'slick' ]);
+const app = angular.module('healthy_product_app', ['ngRoute', 'slick']);
 
 const url = 'http://localhost:4000';
 
 if (!localStorage.cart) localStorage.setItem('cart', JSON.stringify([]));
 
-app.config(function($routeProvider, $locationProvider) {
+app.config(function ($routeProvider, $locationProvider) {
 	$locationProvider.hashPrefix('');
 	$routeProvider
 		.when('/', {
@@ -29,4 +29,34 @@ app.config(function($routeProvider, $locationProvider) {
 		.when('/contact', {
 			templateUrl: './views/contact.html'
 		});
+});
+app.directive('failMessage', function ($timeout) {
+	return {
+		restrict: 'E',
+		scope: {
+			dur: '=',
+			failMsg: '=message'
+		},
+		templateUrl: '../views/template-components/fail-message.html',
+		link(scope, element, attrs, controller, transcludeFn) {
+			scope.$watch('failMsg', (oldValue, newValue) => {
+				if (!!oldValue) $timeout(() => (scope.failMsg = ''), scope.dur);
+			});
+		}
+	};
+})
+app.directive('successMessage', function ($timeout) {
+	return {
+		restrict: 'E',
+		scope: {
+			dur: '=',
+			successMsg: '=message'
+		},
+		templateUrl: '../views/template-components/success-message.html',
+		link(scope, element, attrs, controller, transcludeFn) {
+			scope.$watch('successMsg', (oldValue, newValue) => {
+				if (!!oldValue) $timeout(() => (scope.successMsg = ''), scope.dur);
+			});
+		}
+	};
 });

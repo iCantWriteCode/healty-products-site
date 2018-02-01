@@ -13,18 +13,21 @@
                         <th scope="col">Βάρος</th>
                         <th scope="col">Ποσότητα</th>
                         <th scope="col">Τιμή</th>
-                        <th scope="col"></th>
+                        <!-- <th scope="col"></th> -->
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="product in cart track by $index">
-                        <th scope="row"><a ng-href="#/product/{{product.slug}}">{{product.name}}</a></th>
+                        <th scope="row">
+                            <a ng-href="#/product/{{product.slug}}">
+                                <img class="mouse-hand" src="./images/svg/remove-from-cart.svg" style="max-width: 20px;margin-right: 10px;" ng-click="removeFromCart(product)"> {{product.name}}</a>
+                        </th>
                         <td>{{product.weight | number: 2}}kg</td>
                         <td>x{{product.amount}}</td>
                         <td>{{product.salesPrice || product.price | number: 2}}€</td>
-                        <td><img class="mouse-hand" src="./images/svg/remove-from-cart.svg" style="max-height: 15%; max-width: 15%" ng-click="removeFromCart(product)"></td>
+                        <!-- <td><img class="mouse-hand" src="./images/svg/remove-from-cart.svg" style="max-height: 15%; max-width: 15%" ng-click="removeFromCart(product)"></td> -->
                     </tr>
-                   
+
                     <tr style="border: 1px solid rgba(0,0,0,.9);">
                         <th colspan="3" style="border-top: 1px solid rgba(0,0,0,.9);">Σύνολο</th>
                         <td style="border-top: 1px solid rgba(0,0,0,.9);">{{getSubTotal(cart) | number: 2}}€</td>

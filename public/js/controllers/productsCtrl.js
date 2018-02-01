@@ -1,4 +1,4 @@
-app.controller('products', function($scope, $routeParams, $products, $slug, $cart) {
+app.controller('products', function ($scope, $routeParams, $products, $slug, $cart) {
 	const categories = $routeParams.categories.split('/');
 	const searchCategory = categories[categories.length - 1];
 	const page = $routeParams.page;
@@ -8,13 +8,17 @@ app.controller('products', function($scope, $routeParams, $products, $slug, $car
 	$scope.addToCart = (product) => {
 		product.amount = 1;
 		$cart.addProduct(product);
-		$scope.message = 'Το προϊόν προστέθηκε στο καλάθι';
+		// $scope.message = 'Το προϊόν προστέθηκε στο καλάθι';
+		$scope.successMsg = 'Το προϊόν προστέθηκε στο καλάθι'
 	};
 
 	function getProducts(page = 1) {
 		$products
 			.getByCategory(searchCategory, page)
-			.then(({ products, pages }) => {
+			.then(({
+				products,
+				pages
+			}) => {
 				$scope.products = products;
 				createPagination(pages);
 			})
@@ -27,4 +31,5 @@ app.controller('products', function($scope, $routeParams, $products, $slug, $car
 		$scope.pages = new Array(totalPages);
 		$scope.currentPage = $routeParams.page;
 	}
+
 });
