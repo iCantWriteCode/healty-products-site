@@ -1,4 +1,4 @@
-app.controller('checkout', function($scope, $products, $shippings, $orders, $payment, $cart) {
+app.controller('checkout', function($scope, $http, $products, $shippings, $orders, $payment, $cart) {
 	const cart = JSON.parse(localStorage.cart);
 	$scope.cart = JSON.parse(localStorage.cart);
 	$scope.$on('cart changed', () => ($scope.cart = JSON.parse(localStorage.cart)));
@@ -56,8 +56,10 @@ app.controller('checkout', function($scope, $products, $shippings, $orders, $pay
 
 	$scope.removeFromCart = (product) => $cart.removeProduct(product);
 	$scope.submitOrder = (order) => {
-		console.log(order);
-		$orders.submit(order).then((res) => console.log(res));
+		order.recaptcha = document.querySelector('#g-recaptcha-response').value || null;
+		$orders.submit(order).then((res) => console.log(res)).catch((res) => {
+			if (res.status === 403) console.warn(res.data);
+		});
 	};
 
 	$scope.payments = [
