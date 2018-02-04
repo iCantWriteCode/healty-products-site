@@ -31,20 +31,8 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" ng-href="#/products/{{getSlug('Φρέσκια Γύρη')}}/1">Φρέσκια Γύρη</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#/products/{{getSlug('Βασιλική Κηραλοιφή')}}/1">Βασιλική Κηραλοιφή</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#/products/{{getSlug('Πρόπολη')}}/1">Πρόπολη</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#/products/{{getSlug('Σταφυλομέλι (Πετιμέζι)')}}/1">Σταφυλομέλι (Πετιμέζι)</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#/products/{{getSlug('Μέλι')}}/1">Μέλι</a>
+      <li class="nav-item" ng-repeat="category in navBar track by $index">
+        <a class="nav-link" ng-href="#/products/{{category.slug}}/1">{{category.name}}</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#/">Άλλα Προϊόντα</a>
