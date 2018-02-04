@@ -19,8 +19,8 @@
                 <tbody>
                     <tr ng-repeat="product in cart track by $index">
                         <th scope="row">
-                            <a ng-href="#/product/{{product.slug}}">
-                                <img class="mouse-hand" src="./images/svg/remove-from-cart.svg" style="max-width: 20px;margin-right: 10px;" ng-click="removeFromCart(product)"> {{product.name}}</a>
+                            <img class="mouse-hand" src="./images/svg/remove-from-cart.svg" style="max-width: 20px;margin-right: 10px;" ng-click="removeFromCart(product)">
+                            <a ng-href="#/product/{{product.slug}}">{{product.name}}</a>
                         </th>
                         <td>{{product.weight | number: 2}}kg</td>
                         <td>x{{product.amount}}</td>

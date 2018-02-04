@@ -5,8 +5,8 @@ app.service('$payment', function() {
 			cart.forEach((product) => (total += product.amount * (product.salesPrice || product.price)));
 			return total;
 		},
-		total(subTotal, shippingCost, paymentMethod) {
-			return subTotal + shippingCost;
+		total(subTotal, shippingCost, paymentCost) {
+			return subTotal + shippingCost + paymentCost;
 		}
 	};
 });

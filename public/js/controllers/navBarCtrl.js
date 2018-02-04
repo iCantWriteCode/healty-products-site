@@ -1,3 +1,6 @@
-app.controller('navBar', function($scope, $slug) {
-	$scope.getSlug = (word) => $slug(word);
+app.controller('navBar', function($scope, $http) {
+	$scope.$on('cart changed', () => ($scope.cart = JSON.parse(localStorage.cart)));
+	$scope.cart = JSON.parse(localStorage.cart);
+
+	$http.get(`${url}/categories/navigation-bar`).then(({ data }) => ($scope.navBar = data));
 });
