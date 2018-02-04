@@ -133,15 +133,15 @@ a.btn-fill {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
-    border: 1px solid #ccc;
+    border: 1px solid #006837;
     background: white;
     position: fixed;
     /* top: 50vh; */
     margin: 0 auto;
     display: block;
-    padding: 1rem;
+    padding: 3rem 3rem;
     text-align: center;
-    line-height: 200px;
+    /* line-height: 4; */
 }
 
 .check {
