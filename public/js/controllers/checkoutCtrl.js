@@ -29,7 +29,9 @@ app.controller('checkout', function($scope, $http, $products, $shippings, $order
 			id: item._id,
 			name: item.name,
 			amount: item.amount,
-			price: item.salesPrice || item.price
+			amountForSale: item.amountForSale,
+			price: item.salesPrice || item.price,
+			weight: item.weight
 		}));
 		$scope.order.total = total;
 	}
@@ -56,7 +58,11 @@ app.controller('checkout', function($scope, $http, $products, $shippings, $order
 
 	$scope.removeFromCart = (product) => $cart.removeProduct(product);
 	$scope.submitOrder = (order) => {
-		order.recaptcha = document.querySelector('#g-recaptcha-response').value || null;
+		try {
+			order.recaptcha = document.querySelector('#g-recaptcha-response').value || null;
+		} catch (err) {
+			console.log('Ένα σφάλμα συνέβη. Προσπαθήστε να κάνετε ανανέωση στην σελίδα');
+		}
 		$orders.submit(order).then((res) => console.log(res)).catch((res) => {
 			if (res.status === 403) console.warn(res.data);
 		});

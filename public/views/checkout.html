@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label>Όνομα *</label>
-                    <input type="text" class="form-control" placeholder="Ονομα" ng-model="order.customer.firstname" required>
+                    <input type="text" class="form-control" placeholder="Όνομα" ng-model="order.customer.firstname" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Επώνυμο *</label>
@@ -137,10 +137,10 @@
 
             <hr>
             <a href="/#cart" class="btn-fill">Επιστροφή Στο Καλάθι</a>
-            
-            <div vc-recaptcha key="'6Leb4kMUAAAAAJopyh3PIn-SrM1S541VDQlsQRZQ'"></div>
-
             <button type="submit" class="btn-fill float-right">Ολοκλήρωση Παραγγελίας</button>
+
+            <div class="float-right" vc-recaptcha key="'6Leb4kMUAAAAAJopyh3PIn-SrM1S541VDQlsQRZQ'"></div>
+
 
         </div>
     </form>
