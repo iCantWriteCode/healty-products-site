@@ -1,7 +1,13 @@
 <div class="container inner-page product-page">
     <div class="row heading-row">
         <div class="col-md-4">
-            <img src="{{product.featuredImage}}" err-src="http://localhost:4000/public/img/error-image.jpg" alt="" class="img-fluid">
+            <img src="{{product.featuredImage}}" err-src="http://localhost:4000/public/img/error-image.jpg" alt="" class="img-fluid mb-2">
+            <div class="row image-row">
+                <div ng-repeat="image in product.images" class="col-md-4" ng-if="image != product.featuredImage">
+                    <img ng-src="{{image}}" alt="" class="img-fluid">
+                </div>
+            </div>
+
         </div>
         <div class="col-md-8">
             <h3>Title</h3>
@@ -18,8 +24,8 @@
             </span>
             <p>
                 <button type="button" class="quantity-btn qty-test" ng-click="decreaseAmount()">-</button>
-                <input class="qty quantity-input qty-test" ng-model="amount" type="number" min="1"/>
-                <button type="button" class="quantity-btn qty-test" ng-click="increaseAmount()" >+</button>
+                <input class="qty quantity-input qty-test" ng-model="amount" type="number" min="1" />
+                <button type="button" class="quantity-btn qty-test" ng-click="increaseAmount()">+</button>
 
                 <button class="btn-fill add-to-cart" ng-click="addToCart(product)">Προσθήκη στο καλάθι</button>
                 <ui-message message="message" dur="3000"></ui-message>

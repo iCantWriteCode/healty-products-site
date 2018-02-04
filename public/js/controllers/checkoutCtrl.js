@@ -1,4 +1,4 @@
-app.controller('checkout', function($scope, $http, $products, $shippings, $orders, $payment, $cart) {
+app.controller('checkout', function ($scope, $http, $products, $shippings, $orders, $payment, $cart) {
 	const cart = JSON.parse(localStorage.cart);
 	$scope.cart = JSON.parse(localStorage.cart);
 	$scope.$on('cart changed', () => ($scope.cart = JSON.parse(localStorage.cart)));
@@ -38,9 +38,25 @@ app.controller('checkout', function($scope, $http, $products, $shippings, $order
 
 	function initiateNewOrder() {
 		$scope.order = {
-			customer: { firstname: '', lastname: '', phone: '', email: '' },
-			shipping: { address: '', city: '', country: '', zip: '', company: '', price: undefined },
-			payment: { method: '', cost: undefined, bank: '' },
+			customer: {
+				firstname: '',
+				lastname: '',
+				phone: '',
+				email: ''
+			},
+			shipping: {
+				address: '',
+				city: '',
+				country: '',
+				zip: '',
+				company: '',
+				price: undefined
+			},
+			payment: {
+				method: '',
+				cost: undefined,
+				bank: ''
+			},
 			items: [],
 			total: 0
 		};
@@ -58,18 +74,26 @@ app.controller('checkout', function($scope, $http, $products, $shippings, $order
 
 	$scope.removeFromCart = (product) => $cart.removeProduct(product);
 	$scope.submitOrder = (order) => {
-		try {
-			order.recaptcha = document.querySelector('#g-recaptcha-response').value || null;
-		} catch (err) {
-			console.log('Ένα σφάλμα συνέβη. Προσπαθήστε να κάνετε ανανέωση στην σελίδα');
-		}
+		// try {
+		order.recaptcha = document.querySelector('#g-recaptcha-response').value || null;
+		// } 
+		// catch (err) {
+		// 	console.log('Ένα σφάλμα συνέβη. Προσπαθήστε να κάνετε ανανέωση στην σελίδα');
+		// }
 		$orders.submit(order).then((res) => console.log(res)).catch((res) => {
 			if (res.status === 403) console.warn(res.data);
 		});
 	};
 
-	$scope.payments = [
-		{ method: 'Αντικαταβολή', cost: 3.0, bank: '' },
-		{ method: 'Τραπεζική Κατάθεση', cost: 0, bank: '' }
+	$scope.payments = [{
+			method: 'Αντικαταβολή',
+			cost: 3.0,
+			bank: ''
+		},
+		{
+			method: 'Τραπεζική Κατάθεση',
+			cost: 0,
+			bank: ''
+		}
 	];
 });

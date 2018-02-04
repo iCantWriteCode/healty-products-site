@@ -51,6 +51,18 @@
   <script src="./js/directives/errSrc.js"></script>
   <script src="./js/directives/recaptcha.js"></script>
 
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'el',
+        includedLanguages: 'de,el,en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
   <script src="./js/smoothScrollService.js"></script>
 
@@ -61,6 +73,7 @@
 <body ng-app="healthy_product_app" ng-cloak>
   <div>
     <div ng-controller="navBar" ng-include="'./views/main-site-templates/navbar.html'"></div>
+
     <div ng-view></div>
     <div ng-include="'./views/main-site-templates/footer.html'"></div>
   </div>
