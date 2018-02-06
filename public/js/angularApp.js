@@ -1,14 +1,15 @@
-const app = angular.module('healthy_product_app', [ 'ngRoute', 'slick', 'vcRecaptcha' ]);
+const app = angular.module('healthy_product_app', ['ngRoute', 'slick', 'vcRecaptcha', 'ngSanitize']);
 
 const url = 'http://localhost:4000';
 
 if (!localStorage.cart) localStorage.setItem('cart', JSON.stringify([]));
 
-app.config(function($routeProvider, $locationProvider) {
+app.config(function ($routeProvider, $locationProvider) {
 	$locationProvider.hashPrefix('');
 	$routeProvider
 		.when('/', {
-			templateUrl: './views/home.html'
+			templateUrl: './views/home.html',
+			controller: 'homeCtrl'
 		})
 		.when('/products/:categories*/:page', {
 			templateUrl: './views/product-listing.html',
@@ -30,7 +31,7 @@ app.config(function($routeProvider, $locationProvider) {
 			templateUrl: './views/contact.html'
 		});
 });
-app.directive('failMessage', function($timeout) {
+app.directive('failMessage', function ($timeout) {
 	return {
 		restrict: 'E',
 		scope: {
@@ -45,7 +46,7 @@ app.directive('failMessage', function($timeout) {
 		}
 	};
 });
-app.directive('successMessage', function($timeout) {
+app.directive('successMessage', function ($timeout) {
 	return {
 		restrict: 'E',
 		scope: {
