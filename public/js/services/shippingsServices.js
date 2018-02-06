@@ -15,7 +15,7 @@ app.service('$shippings', function($http) {
 					return 0;
 				};
 
-			if (weight < shipping.maxWeight)
+			if (weight < shipping.maxWeight || !shipping.maxWeight)
 				return function(itemsTotal) {
 					if (itemsTotal < shipping.upToSubtotal || !shipping.upToSubtotal) return shipping.defaultPrice;
 					return 0;
