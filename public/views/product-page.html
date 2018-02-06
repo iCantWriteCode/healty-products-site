@@ -10,9 +10,9 @@
 
         </div>
         <div class="col-md-8">
-            <h3>Title</h3>
+            <h3>{{product.name}}</h3>
             <p>
-                {{product.name}}
+                {{product.description}}
             </p>
             <span class="price-tag">Τιμή:</span>
             <span ng-if="!product.salesPrice">
@@ -28,7 +28,7 @@
                 <button type="button" class="quantity-btn qty-test" ng-click="increaseAmount()">+</button>
 
                 <button class="btn-fill add-to-cart" ng-click="addToCart(product)">Προσθήκη στο καλάθι</button>
-                <ui-message message="message" dur="3000"></ui-message>
+                <success-message message="successMsg" dur="3000"></success-message>
             </p>
         </div>
     </div>
