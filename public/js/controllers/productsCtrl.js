@@ -8,7 +8,6 @@ app.controller('products', function($scope, $routeParams, $products, $slug, $car
 	$scope.addToCart = (product) => {
 		product.amount = 1;
 		$cart.addProduct(product);
-		// $scope.message = 'Το προϊόν προστέθηκε στο καλάθι';
 		$scope.successMsg = 'Το προϊόν προστέθηκε στο καλάθι';
 	};
 
