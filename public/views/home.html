@@ -68,7 +68,9 @@
         <div class="col-md-12">
             <!-- <slick arrows="true" dots="true" infinite="true" speed="300" slides-to-show="3" touch-move="false" slides-to-scroll="1" class="slider one-time">
                 <div class="slick-image-wrapper" ng-repeat="product in featuredProducts track by $index">
-                    <img ng-src="{{product.featuredImage}}"class="img-fluid">
+                    <a ng-href="#/product/{{product.slug}}">
+                        <img ng-src="{{product.featuredImage}}"class="img-fluid">
+                    </a>
                 </div>
             </slick> -->
 
@@ -83,13 +85,3 @@
 
 </div>
 
-<!-- <div class="container questions home-padding" id="ask_us">
-    <hr>
-    <div class="row">
-        <div class="col-md-12">
-            <h3 class="text-center home-page-heading">Εχετε Απορία;</h3>
-            <p class="text-center">Επικοινωνήστε άμεσα στο 697 28 28 629</p>
-        </div>
-    </div>
-    <hr>
-</div> -->
