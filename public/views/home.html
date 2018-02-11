@@ -57,45 +57,7 @@
         </div>
     </div>
 </div>
-<!-- <div class="container-fluid" style="    overflow-x: auto;
-/* max-height: 200px; */
-/* border: 1px solid #ccc; */
-padding: 3rem;
-background: whitesmoke;">
-    <div class="beta-cont" style="    max-width: 1000px;
-    margin: 0 auto;">
 
-
-        <div class="row">
-            <div class="col-12">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, molestias id! Dolorem eligendi ab reiciendis, dolor cupiditate
-                    quo harum praesentium doloremque, nulla, nemo a ea. Molestiae itaque tempore earum nobis. Lorem ipsum
-                    dolor sit amet consectetur adipisicing elit. Quia, aspernatur? Repudiandae iste dignissimos sed quis
-                    quasi eum voluptatem! Consequatur nam nihil voluptatem cum nostrum nisi, obcaecati molestiae molestias
-                    beatae consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, molestias id! Dolorem
-                    eligendi ab reiciendis, dolor cupiditate quo harum praesentium doloremque, nulla, nemo a ea. Molestiae
-                    itaque tempore earum nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, aspernatur?
-                    Repudiandae iste dignissimos sed quis quasi eum voluptatem! Consequatur nam nihil voluptatem cum nostrum
-                    nisi, obcaecati molestiae molestias beatae consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Rerum, molestias id! Dolorem eligendi ab reiciendis, dolor cupiditate quo harum praesentium doloremque,
-                    nulla, nemo a ea. Molestiae itaque tempore earum nobis. Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Quia, aspernatur? Repudiandae iste dignissimos sed quis quasi eum voluptatem! Consequatur nam nihil
-                    voluptatem cum nostrum nisi, obcaecati molestiae molestias beatae consequuntur. Lorem ipsum dolor sit
-                    amet consectetur adipisicing elit. Rerum, molestias id! Dolorem eligendi ab reiciendis, dolor cupiditate
-                    quo harum praesentium doloremque, nulla, nemo a ea. Molestiae itaque tempore earum nobis. Lorem ipsum
-                    dolor sit amet consectetur adipisicing elit. Quia, aspernatur? Repudiandae iste dignissimos sed quis
-                    quasi eum voluptatem! Consequatur nam nihil voluptatem cum nostrum nisi, obcaecati molestiae molestias
-                    beatae consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, molestias id! Dolorem
-                    eligendi ab reiciendis, dolor cupiditate quo harum praesentium doloremque, nulla, nemo a ea. Molestiae
-                    itaque tempore earum nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, aspernatur?
-                    Repudiandae iste dignissimos sed quis quasi eum voluptatem! Consequatur nam nihil voluptatem cum nostrum
-                    nisi, obcaecati molestiae molestias beatae consequuntur.
-                </p>
-            </div>
-        </div>
-    </div>
-</div> -->
 <div class="container home-padding">
     <div class="row heading-row">
         <div class="col-md-12">
@@ -106,7 +68,9 @@ background: whitesmoke;">
         <div class="col-md-12">
             <slick arrows="true" dots="true" infinite="true" speed="300" slides-to-show="3" touch-move="false" slides-to-scroll="1" class="slider one-time">
                 <div class="slick-image-wrapper" ng-repeat="product in featuredProducts track by $index">
-                    <img ng-src="{{product.featuredImage}}"class="img-fluid">
+                    <a ng-href="#/product/{{product.slug}}">
+                        <img ng-src="{{product.featuredImage}}"class="img-fluid">
+                    </a>
                 </div>
             </slick>
         </div>
@@ -115,13 +79,3 @@ background: whitesmoke;">
 
 </div>
 
-<!-- <div class="container questions home-padding" id="ask_us">
-    <hr>
-    <div class="row">
-        <div class="col-md-12">
-            <h3 class="text-center home-page-heading">Εχετε Απορία;</h3>
-            <p class="text-center">Επικοινωνήστε άμεσα στο 697 28 28 629</p>
-        </div>
-    </div>
-    <hr>
-</div> -->
