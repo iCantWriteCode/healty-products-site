@@ -104,27 +104,9 @@ background: whitesmoke;">
     </div>
     <div class="row">
         <div class="col-md-12">
-            <slick arrows="true" dots="true" infinite="true" speed=300 slides-to-show=3 touch-move="false" slides-to-scroll=1 class="slider one-time">
-                <div class="slick-image-wrapper">
-                    <img src="http://via.placeholder.com/600x600" alt="" class="img-fluid">
-                </div>
-                <div class="slick-image-wrapper">
-                    <img src="http://via.placeholder.com/600x600" alt="" class="img-fluid">
-                </div>
-                <div class="slick-image-wrapper">
-                    <img src="http://via.placeholder.com/600x600" alt="" class="img-fluid">
-                </div>
-                <div class="slick-image-wrapper">
-                    <img src="http://via.placeholder.com/600x600" alt="" class="img-fluid">
-                </div>
-                <div class="slick-image-wrapper">
-                    <img src="http://via.placeholder.com/600x600" alt="" class="img-fluid">
-                </div>
-                <div class="slick-image-wrapper">
-                    <img src="http://via.placeholder.com/600x600" alt="" class="img-fluid">
-                </div>
-                <div class="slick-image-wrapper">
-                    <img src="http://via.placeholder.com/600x600" alt="" class="img-fluid">
+            <slick arrows="true" dots="true" infinite="true" speed="300" slides-to-show="3" touch-move="false" slides-to-scroll="1" class="slider one-time">
+                <div class="slick-image-wrapper" ng-repeat="product in featuredProducts track by $index">
+                    <img ng-src="{{product.featuredImage}}"class="img-fluid">
                 </div>
             </slick>
         </div>
