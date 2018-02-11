@@ -1,4 +1,4 @@
-const app = angular.module('healthy_product_app', [ 'ngRoute', 'slick', 'vcRecaptcha', 'ngSanitize' ]);
+const app = angular.module('healthy_product_app', [ 'ngRoute', 'slickCarousel', 'vcRecaptcha', 'ngSanitize' ]);
 
 const url = 'http://localhost:4000';
 

@@ -8,20 +8,20 @@
         </div> -->
         <div class="col-md-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
+                <!-- <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
+                </ol> -->
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="http://via.placeholder.com/1920x1080" alt="First slide" style="max-height: 500px;">
+                    <div ng-class='{active:$first}' class="carousel-item" ng-repeat="img in slider.images">
+                        <img class="d-block w-100" ng-src="{{img}}" alt="First slide" style="max-height: 500px;">
                         <div class="carousel-caption d-none d-sm-block">
                             <h5>dsa</h5>
                             <p>dsa.</p>
                         </div>
                     </div>
-                    <div class="carousel-item">
+                    <!-- <div class="carousel-item">
                         <img class="d-block w-100" src="http://via.placeholder.com/1920x1080" alt="Second slide" style="max-height: 500px;">
                         <div class="carousel-caption d-none d-sm-block">
                             <h5>...</h5>
@@ -34,7 +34,7 @@
                             <h5>...</h5>
                             <p>...</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <a class="carousel-control-prev" data-target="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -57,45 +57,7 @@
         </div>
     </div>
 </div>
-<!-- <div class="container-fluid" style="    overflow-x: auto;
-/* max-height: 200px; */
-/* border: 1px solid #ccc; */
-padding: 3rem;
-background: whitesmoke;">
-    <div class="beta-cont" style="    max-width: 1000px;
-    margin: 0 auto;">
 
-
-        <div class="row">
-            <div class="col-12">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, molestias id! Dolorem eligendi ab reiciendis, dolor cupiditate
-                    quo harum praesentium doloremque, nulla, nemo a ea. Molestiae itaque tempore earum nobis. Lorem ipsum
-                    dolor sit amet consectetur adipisicing elit. Quia, aspernatur? Repudiandae iste dignissimos sed quis
-                    quasi eum voluptatem! Consequatur nam nihil voluptatem cum nostrum nisi, obcaecati molestiae molestias
-                    beatae consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, molestias id! Dolorem
-                    eligendi ab reiciendis, dolor cupiditate quo harum praesentium doloremque, nulla, nemo a ea. Molestiae
-                    itaque tempore earum nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, aspernatur?
-                    Repudiandae iste dignissimos sed quis quasi eum voluptatem! Consequatur nam nihil voluptatem cum nostrum
-                    nisi, obcaecati molestiae molestias beatae consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Rerum, molestias id! Dolorem eligendi ab reiciendis, dolor cupiditate quo harum praesentium doloremque,
-                    nulla, nemo a ea. Molestiae itaque tempore earum nobis. Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Quia, aspernatur? Repudiandae iste dignissimos sed quis quasi eum voluptatem! Consequatur nam nihil
-                    voluptatem cum nostrum nisi, obcaecati molestiae molestias beatae consequuntur. Lorem ipsum dolor sit
-                    amet consectetur adipisicing elit. Rerum, molestias id! Dolorem eligendi ab reiciendis, dolor cupiditate
-                    quo harum praesentium doloremque, nulla, nemo a ea. Molestiae itaque tempore earum nobis. Lorem ipsum
-                    dolor sit amet consectetur adipisicing elit. Quia, aspernatur? Repudiandae iste dignissimos sed quis
-                    quasi eum voluptatem! Consequatur nam nihil voluptatem cum nostrum nisi, obcaecati molestiae molestias
-                    beatae consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, molestias id! Dolorem
-                    eligendi ab reiciendis, dolor cupiditate quo harum praesentium doloremque, nulla, nemo a ea. Molestiae
-                    itaque tempore earum nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, aspernatur?
-                    Repudiandae iste dignissimos sed quis quasi eum voluptatem! Consequatur nam nihil voluptatem cum nostrum
-                    nisi, obcaecati molestiae molestias beatae consequuntur.
-                </p>
-            </div>
-        </div>
-    </div>
-</div> -->
 <div class="container home-padding">
     <div class="row heading-row">
         <div class="col-md-12">
@@ -104,8 +66,14 @@ background: whitesmoke;">
     </div>
     <div class="row">
         <div class="col-md-12">
-            <slick arrows="true" dots="true" infinite="true" speed="300" slides-to-show="3" touch-move="false" slides-to-scroll="1" class="slider one-time">
+            <!-- <slick arrows="true" dots="true" infinite="true" speed="300" slides-to-show="3" touch-move="false" slides-to-scroll="1" class="slider one-time">
                 <div class="slick-image-wrapper" ng-repeat="product in featuredProducts track by $index">
+                    <img ng-src="{{product.featuredImage}}"class="img-fluid">
+                </div>
+            </slick> -->
+
+            <slick ng-if="featuredProducts" settings="slickConfig" infinite="true" slides-to-show="3" slides-to-scroll="1">
+                <div class="col-md-12" ng-repeat="product in featuredProducts track by $index">
                     <img ng-src="{{product.featuredImage}}"class="img-fluid">
                 </div>
             </slick>
