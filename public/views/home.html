@@ -1,18 +1,8 @@
 <div class="container">
     <div class="row" style="padding-top:2rem;">
-        <!-- <div class="col-md-4">
-            <h3>Title</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure error accusamus, sapiente sed sequi, voluptas deleniti
-                vero velit quisquam, porro repellat! Veniam obcaecati in, perferendis officia eligendi placeat reprehenderit.
-                Dicta?</p>
-        </div> -->
         <div class="col-md-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <!-- <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol> -->
+
                 <div class="carousel-inner">
                     <div ng-class='{active:$first}' class="carousel-item" ng-repeat="img in slider.images">
                         <img class="d-block w-100" ng-src="{{img}}" alt="First slide" style="max-height: 500px;">
@@ -21,20 +11,7 @@
                             <p>dsa.</p>
                         </div>
                     </div>
-                    <!-- <div class="carousel-item">
-                        <img class="d-block w-100" src="http://via.placeholder.com/1920x1080" alt="Second slide" style="max-height: 500px;">
-                        <div class="carousel-caption d-none d-sm-block">
-                            <h5>...</h5>
-                            <p>...</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="http://via.placeholder.com/1920x1080" alt="Third slide" style="max-height: 500px;">
-                        <div class="carousel-caption d-none d-sm-block">
-                            <h5>...</h5>
-                            <p>...</p>
-                        </div>
-                    </div> -->
+    
                 </div>
                 <a class="carousel-control-prev" data-target="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -59,28 +36,21 @@
 </div>
 
 <div class="container home-padding">
+
     <div class="row heading-row">
         <div class="col-md-12">
             <h3 class="text-center">Προτεινόμενα Προϊόντα</h3>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-12">
-            <!-- <slick arrows="true" dots="true" infinite="true" speed="300" slides-to-show="3" touch-move="false" slides-to-scroll="1" class="slider one-time">
-                <div class="slick-image-wrapper" ng-repeat="product in featuredProducts track by $index">
-                    <a ng-href="#/product/{{product.slug}}">
-                        <img ng-src="{{product.featuredImage}}"class="img-fluid">
-                    </a>
-                </div>
-            </slick> -->
-
             <slick ng-if="featuredProducts" settings="slickConfig" infinite="true" slides-to-show="3" slides-to-scroll="1">
                 <div class="col-md-12" ng-repeat="product in featuredProducts track by $index">
                     <img ng-src="{{product.featuredImage}}"class="img-fluid">
                 </div>
             </slick>
         </div>
-
     </div>
 
 </div>
