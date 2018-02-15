@@ -1,19 +1,14 @@
 # Healthy-Products Site
 
-This site is build on Mongo,Express,Node,Angular
+This site is built on Mongo,Express,Node,AngularJS
 
-## Getting Started
-
-Delete the node_modules file and run:
-
+Run
 ```
 npm install
 ```
 
-cause i forgot to .gitignore tis folder and i am to lazy right now.
-
 ### Start Server 
-To start the server run the following coomand and navigate to localhost:9000
+To start the server run the following command and navigate to localhost:9000
 ```
 npm start
 ```
