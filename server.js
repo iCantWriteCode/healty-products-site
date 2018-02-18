@@ -1,8 +1,13 @@
 // Simple server for servis SPA applications
 const express = require('express');
 const path = require('path');
+const morgan = require('morgan');
 
 const app = express();
+
+
+// Morgan middleware
+app.use(morgan('dev'));
 
 // view engine setup
 app.use(express.static(path.join(__dirname, 'public')));
@@ -11,7 +16,6 @@ app.set('view engine', 'ejs');
 
 //1chV2LTbzMvt1S0zuo6y
 // app.use(require('prerender-node').set('prerenderToken', ''));
-
 
 //app.use(require('prerender-node').set('host', 'http://localhost:3000'));
 app.use(require('prerender-node').set('prerenderServiceUrl', 'http://localhost:3000'));
