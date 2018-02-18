@@ -12,9 +12,10 @@ app.set('view engine', 'ejs');
 //1chV2LTbzMvt1S0zuo6y
 // app.use(require('prerender-node').set('prerenderToken', ''));
 
+
 //app.use(require('prerender-node').set('host', 'http://localhost:3000'));
 app.use(require('prerender-node').set('prerenderServiceUrl', 'http://localhost:3000'));
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
 	res.render('index');
 });
 
