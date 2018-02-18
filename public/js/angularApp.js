@@ -7,7 +7,7 @@ if (!localStorage.cart) localStorage.setItem('cart', JSON.stringify([]));
 
 app.config(function($routeProvider, $locationProvider) {
 	//$locationProvider.hashPrefix('');
-	//$locationProvider.html5Mode(true);
+	$locationProvider.html5Mode(true);
 
 	$routeProvider
 		.when('/', {
