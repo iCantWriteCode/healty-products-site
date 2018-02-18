@@ -20,7 +20,7 @@
                     <tr ng-repeat="product in cart track by $index">
                         <th scope="row">
                             <img class="mouse-hand" src="./images/svg/remove-from-cart.svg" style="max-width: 20px;margin-right: 10px;" ng-click="removeFromCart(product)">
-                            <a ng-href="#/product/{{product.slug}}">{{product.name}}</a>
+                            <a ng-href="product/{{product.slug}}">{{product.name}}</a>
                         </th>
                         <td>{{product.weight | number: 2}}kg</td>
                         <td>x{{product.amount}}</td>
@@ -36,7 +36,7 @@
             </table>
         </div>
         <div class="col-sm-6 text-left">
-            <a class="btn-fill" href="#/checkout">Συνέχεια</a>
+            <a class="btn-fill" href="checkout">Συνέχεια</a>
         </div>
     </div>
 </div>
