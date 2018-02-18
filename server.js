@@ -8,10 +8,6 @@ const app = express();
 
 // Morgan middleware
 app.use(morgan('dev'));
-app.use((req,res,next)=>{
-	console.log(req.query)
-	next()
-})
 
 // view engine setup
 app.use(express.static(path.join(__dirname, 'public')));
