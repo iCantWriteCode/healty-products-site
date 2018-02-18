@@ -9,9 +9,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, ''));
 app.set('view engine', 'ejs');
 
-app.use(()=>{
+app.use((req,res,next)=>{
 	require('prerender-node').set('prerenderToken', '1chV2LTbzMvt1S0zuo6y')
 	console.log("mpika")
+	next()
 });
 
 app.get('/', (req, res) => {
