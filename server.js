@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 // app.use(require('prerender-node').set('host', 'http://localhost:3000'));
 app.use(require('prerender-node').set('host', 'http://localhost:3000'));
 //app.use(require('prerender-node').set('prerenderServiceUrl', 'http://localhost:3000'));
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
 	res.render('index');
 });
 
