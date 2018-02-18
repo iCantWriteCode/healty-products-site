@@ -9,7 +9,7 @@ const app = express();
 // Morgan middleware
 app.use(morgan('dev'));
 app.use((req,res,next)=>{
-	console.log(req.params)
+	console.log(req.query)
 	next()
 })
 
