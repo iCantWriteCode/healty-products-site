@@ -1,12 +1,12 @@
 const app = angular.module('healthy_product_app', [ 'ngRoute', 'slickCarousel', 'vcRecaptcha', 'ngSanitize' ]);
 
-const url =  'http://178.62.198.41'
+const url = 'http://178.62.198.41';
 //'http://localhost:4000';
 
 if (!localStorage.cart) localStorage.setItem('cart', JSON.stringify([]));
 
 app.config(function($routeProvider, $locationProvider) {
-	//$locationProvider.hashPrefix('');
+	// $locationProvider.hashPrefix('');
 	$locationProvider.html5Mode(true);
 
 	$routeProvider
