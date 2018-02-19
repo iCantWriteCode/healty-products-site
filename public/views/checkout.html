@@ -1,7 +1,7 @@
 <div class="container-fluid checkout-page inner-page">
     <form class="row" ng-submit="submitOrder(order)">
         <div class="col-lg-6">
-            <h3>Στοιχεία Χρέωσης</h3>
+            <h3>Στοιχεία:</h3>
             <div class="row">
                 <div class="form-group col-md-6">
                     <label>Όνομα *</label>
@@ -13,8 +13,8 @@
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label>Email *</label>
-                    <input type="email" class="form-control" placeholder="Email" ng-model="order.customer.email" required>
+                    <label>Email</label>
+                    <input type="email" class="form-control" placeholder="Email" ng-model="order.customer.email">
                 </div>
                 <div class="form-group col-md-6">
                     <label>Τηλέφωνο *</label>
@@ -33,8 +33,8 @@
                     <input type="text" class="form-control" placeholder="Διεύθυνση Αποστολής" ng-model="order.shipping.address" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label>Ταχυδρομικός Κώδικας *</label>
-                    <input type="text" class="form-control" placeholder="Ταχυδρομικός Κώδικας" ng-model="order.shipping.zip" required>
+                    <label>Ταχυδρομικός Κώδικας</label>
+                    <input type="text" class="form-control" placeholder="Ταχυδρομικός Κώδικας" ng-model="order.shipping.zip">
                 </div>
                 <div class="form-group col-md-6">
                     <label>Σχόλια Παραγγελίας</label>
@@ -110,7 +110,7 @@
                 <tbody>
                     <tr ng-repeat="product in cart track by $index">
                         <th scope="row">
-                            <a ng-href="#/product/{{product.slug}}">{{product.name}}</a>
+                            <a ng-href="product/{{product.slug}}">{{product.name}}</a>
                         </th>
                         <td class="text-center" style=" width: 145px;">x{{product.amount}}</td>
                         <td class="text-right" style=" width: 145px;">{{product.salesPrice || product.price | number: 2}}€</td>
@@ -136,7 +136,7 @@
         </div>
         <div class="col-md-12">
             <hr>
-            <a href="/#cart" class="btn-fill">Επιστροφή Στο Καλάθι</a>
+            <a href="cart" class="btn-fill">Επιστροφή Στο Καλάθι</a>
             <button type="submit" class="btn-fill float-right">Ολοκλήρωση Παραγγελίας</button>
             <div class="float-right" vc-recaptcha key="'6Leb4kMUAAAAAJopyh3PIn-SrM1S541VDQlsQRZQ'"></div>
         </div>
