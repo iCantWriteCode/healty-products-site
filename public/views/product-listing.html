@@ -6,9 +6,9 @@
     </div>
 
     <div class="row product-row">
-        <div class="col-lg-4 col-md-6 col-sm-12 product-col" ng-repeat="product in products">
+        <div class="col-lg-4 col-md-6 col-sm-12 product-col" ng-repeat="product in products track by $index">
             <a ng-href="#/product/{{product.slug}}">
-                <img ng-src="{{product.featuredImage}}" err-src="http://localhost:4000/public/img/error-image.jpg" class="img-fluid">
+                <img ng-src="http://localhost:4000/products/featured-image/{{product._id}}" err-src="http://localhost:4000/public/img/error-image.jpg" class="img-fluid">
             </a>
             <div class="product-desc">
                 <p class="product-title">
