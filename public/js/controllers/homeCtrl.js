@@ -3,7 +3,7 @@ app.controller('homeCtrl', function($http, $scope) {
 
 	$http.get(`${url}/images/slider`).then((res) => ($scope.slider = res.data[0]));
 
-	$http.get(`${url}/products/featured`).then((res) => ($scope.featuredProducts = res.data));
+
 
 	$scope.slickConfig = {
 		enabled: true,

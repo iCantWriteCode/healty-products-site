@@ -47,6 +47,7 @@
   <script src="./js/controllers/productsCtrl.js"></script>
   <script src="./js/controllers/productPageCtrl.js"></script>
   <script src="./js/controllers/navBarCtrl.js"></script>
+  <script src="./js/controllers/suggestedProductsCtrl.js"></script>
   <script src="./js/controllers/cartCtrl.js"></script>
   <script src="./js/controllers/checkoutCtrl.js"></script>
 
@@ -91,6 +92,7 @@
     <div ng-controller="navBar" ng-include="'./views/main-site-templates/navbar.html'"></div>
 
     <div ng-view></div>
+    <div ng-controller="suggestedProducts" ng-include="'./views/main-site-templates/suggestedProducts.html'"></div>
     <div ng-include="'./views/main-site-templates/footer.html'"></div>
   </div>
 
