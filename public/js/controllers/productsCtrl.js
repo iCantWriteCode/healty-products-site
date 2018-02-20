@@ -2,7 +2,7 @@ app.controller('products', function($scope, $routeParams, $products, $slug, $car
 	const categories = $routeParams.categories.split('/');
 	const searchCategory = categories[categories.length - 1];
 	const page = $routeParams.page;
-
+	$scope.url = url
 	getProducts(page);
 
 	$scope.addToCart = (product) => {

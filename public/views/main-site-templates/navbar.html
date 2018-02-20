@@ -4,7 +4,6 @@
       <div class="col-sm-3 align-self-center text-center">
         <!-- <span style="display:inline-block;margin-bottom:.5rem;">Εχετε Απορίες;</span> -->
 
-
       </div>
       <div class="col-sm-6 text-center  align-self-center">
         <a href="">
@@ -33,9 +32,14 @@
       <li class="nav-item" ng-repeat="category in navBar track by $index">
         <a class="nav-link" ng-href="products/{{category.slug}}/1">{{category.name}}</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="">Άλλα Προϊόντα</a>
-      </li>
+      <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Άλλα προιόντα
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" ng-repeat="category in otherProductsDropdown" href="products/{{category.slug}}/1">{{category.name}}</a>
+          </div>
+      </div>
       <li class="nav-item">
         <a class="nav-link" href="contact">Επικοινωνια</a>
       </li>
