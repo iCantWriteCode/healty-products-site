@@ -22,6 +22,10 @@ app.config(function($routeProvider, $locationProvider) {
 			templateUrl: './views/product-page.html',
 			controller: 'product'
 		})
+		.when('/aboutUs', {
+			templateUrl: './views/contact.html',
+			controller: 'aboutUs'
+		})
 		.when('/cart', {
 			templateUrl: './views/cart.html',
 			controller: 'cart'
@@ -33,6 +37,7 @@ app.config(function($routeProvider, $locationProvider) {
 		.when('/contact', {
 			templateUrl: './views/contact.html'
 		});
+		
 });
 app.directive('failMessage', function($timeout) {
 	return {
