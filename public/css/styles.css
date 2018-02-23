@@ -214,3 +214,22 @@ footer .nav-link {
 		padding: .75rem 1.5rem;
 	}
 }
+
+/* =====================================================
+                       About Us
+===================================================== */
+.about-us .slick-next.slick-arrow {
+    position: absolute;
+    top: -35px;
+    left: calc(50% - 13.5px);
+    transform: rotate(-90deg);
+}
+.about-us .slick-prev.slick-arrow {
+    position: absolute;
+    top: 100%;
+    left: calc(50% - 17.5px);
+    transform: rotate(-90deg);
+}
+.active {
+    font-weight: 600 !important;
+}

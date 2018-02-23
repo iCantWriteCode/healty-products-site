@@ -19,7 +19,11 @@
                 <tbody>
                     <tr ng-repeat="product in cart track by $index">
                         <th scope="row">
-                            <img class="mouse-hand" src="./images/svg/remove-from-cart.svg" style="max-width: 20px;margin-right: 10px;" ng-click="removeFromCart(product)">
+                            <!-- <img class="mouse-hand" src="./images/svg/remove-from-cart.svg" style="max-width: 20px;margin-right: 10px;" ng-click="removeFromCart(product)"> -->
+                            <span class="mouse-hand" ng-click="removeFromCart(product)" style="    border: 1px solid black;
+                            border-radius: 50%;
+                            padding: 1px 7px;
+                            line-height: 1;">X</span>
                             <a ng-href="product/{{product.slug}}">{{product.name}}</a>
                         </th>
                         <td>{{product.weight | number: 2}}kg</td>

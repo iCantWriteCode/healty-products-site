@@ -1,11 +1,11 @@
-const app = angular.module('healthy_product_app', [ 'ngRoute', 'slickCarousel', 'vcRecaptcha', 'ngSanitize' ]);
+const app = angular.module('healthy_product_app', ['ngRoute', 'slickCarousel', 'vcRecaptcha', 'ngSanitize']);
 
-const url =  'http://178.62.198.41'
+const url = 'http://178.62.198.41'
 //const url = 'http://localhost:4000';
 
 if (!localStorage.cart) localStorage.setItem('cart', JSON.stringify([]));
 
-app.config(function($routeProvider, $locationProvider) {
+app.config(function ($routeProvider, $locationProvider) {
 	// $locationProvider.hashPrefix('');
 	$locationProvider.html5Mode(true);
 
@@ -16,15 +16,17 @@ app.config(function($routeProvider, $locationProvider) {
 		})
 		.when('/products/:categories*/:page', {
 			templateUrl: './views/product-listing.html',
-			controller: 'products'
+			controller: 'products',
+			activeNav: 'category.slug'
 		})
 		.when('/product/:slug', {
 			templateUrl: './views/product-page.html',
 			controller: 'product'
 		})
-		.when('/aboutUs', {
-			templateUrl: './views/contact.html',
-			controller: 'aboutUs'
+		.when('/about-us', {
+			templateUrl: './views/about-us.html',
+			controller: 'aboutUs',
+			activeNav: 'about-us'
 		})
 		.when('/cart', {
 			templateUrl: './views/cart.html',
@@ -36,10 +38,13 @@ app.config(function($routeProvider, $locationProvider) {
 		})
 		.when('/contact', {
 			templateUrl: './views/contact.html'
+		})
+		.otherwise({
+			redirectTo: '/'
 		});
-		
+
 });
-app.directive('failMessage', function($timeout) {
+app.directive('failMessage', function ($timeout) {
 	return {
 		restrict: 'E',
 		scope: {
@@ -54,7 +59,7 @@ app.directive('failMessage', function($timeout) {
 		}
 	};
 });
-app.directive('successMessage', function($timeout) {
+app.directive('successMessage', function ($timeout) {
 	return {
 		restrict: 'E',
 		scope: {

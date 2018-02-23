@@ -3,11 +3,13 @@
     <div class="row d-flex">
       <div class="col-sm-3 align-self-center text-center">
         <!-- <span style="display:inline-block;margin-bottom:.5rem;">Εχετε Απορίες;</span> -->
-
+        <div id="google_translate_element"></div>
       </div>
       <div class="col-sm-6 text-center  align-self-center">
         <a href="">
-          <a href="/"><img src="./images/logo.png" class="img-fluid"></a>
+          <a href="/">
+            <img src="./images/logo.png" class="img-fluid" style="min-width: 250px;">
+          </a>
         </a>
 
       </div>
@@ -30,31 +32,50 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" ng-repeat="category in navBar track by $index">
-        <a class="nav-link" ng-href="products/{{category.slug}}/1">{{category.name}}</a>
+        <a class="nav-link" ng-href="products/{{category.slug}}/1" data-toggle="collapse" data-target=".navbar-collapse.show" ng-class="{ active: isActive('/products/{{category.slug}}/1')}">{{category.name}}</a>
       </li>
-      <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Άλλα προιόντα
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" ng-repeat="category in otherProductsDropdown" href="products/{{category.slug}}/1">{{category.name}}</a>
-          </div>
-      </div>
-      <li class="nav-item" >
-        <a class="nav-link" ng-href="aboutUs">About Us</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false" ng-class="{ active: isActive('/products/{{category.slug}}/1')}">
+          Άλλα προιόντα
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" ng-repeat="category in otherProductsDropdown" href="products/{{category.slug}}/1" data-toggle="collapse"
+            data-target=".navbar-collapse.show">{{category.name}}</a>
+        </div>
+      </li>
+      <!-- <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false" ng-class="{ active: isActive('/products/{{category.slug}}/1')}">
+          Άλλα προιόντα
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" ng-repeat="category in otherProductsDropdown" href="products/{{category.slug}}/1" data-toggle="collapse"
+            data-target=".navbar-collapse.show">{{category.name}}</a>
+        </div>
+      </div> -->
+      <li class="nav-item">
+        <a class="nav-link" ng-href="about-us" ng-class="{ active: isActive('/about-us')}">About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="contact">Επικοινωνία</a>
+        <a class="nav-link" href="contact" ng-class="{ active: isActive('/contact')}">Επικοινωνία</a>
       </li>
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link">
-          <div id="google_translate_element"></div>
+         
 
         </a>
 
-      </li>
+      </li> -->
     </ul>
 
   </div>
 </nav>
+
+<script>
+
+  $('.navbar-nav>li>a').on('click', function () {
+    $('.navbar-collapse').collapse('hide');
+  });
+</script>

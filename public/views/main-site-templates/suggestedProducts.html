@@ -1,19 +1,21 @@
-<div class="container home-padding">
+<div class="container home-padding" ng-controller="homeCtrl">
 
-        <div class="row heading-row">
-            <div class="col-md-12">
-                <h3 class="text-center">Προτεινόμενα Προϊόντα</h3>
-            </div>
+    <div class="row heading-row">
+        <div class="col-md-12">
+            <h3 class="text-center">Προτεινόμενα Προϊόντα</h3>
         </div>
-    
-        <div class="row">
-            <div class="col-md-12">
-                <slick ng-if="featuredProducts" settings="slickConfig" infinite="true" slides-to-show="3" slides-to-scroll="1">
-                    <div class="col-md-12" ng-repeat="product in featuredProducts track by $index">
-                        <a ng-href="product/{{product.slug}}" ng-click="onSuggestedProductClick()"><img ng-src="{{product.featuredImage}}"class="img-fluid"></a>
-                    </div>
-                </slick>
-            </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <slick ng-if="featuredProducts" settings="slickConfig" infinite="true" slides-to-show="3" slides-to-scroll="1">
+                <div class="col-md-12" ng-repeat="product in featuredProducts track by $index">
+                    <a ng-href="product/{{product.slug}}" ng-click="onSuggestedProductClick()">
+                        <img ng-src="{{product.featuredImage}}" class="img-fluid">
+                    </a>
+                </div>
+            </slick>
         </div>
-    
+    </div>
+
 </div>
