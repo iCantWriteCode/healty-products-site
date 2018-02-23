@@ -1,9 +1,10 @@
-app.controller('products', function($scope, $routeParams, $products, $slug, $cart) {
+app.controller('products', function($scope, $routeParams, $products, $slug, $cart, $anchorScroll) {
 	const categories = $routeParams.categories.split('/');
 	const searchCategory = categories[categories.length - 1];
 	const page = $routeParams.page;
 	$scope.url = url
 	getProducts(page);
+	$anchorScroll('')
 
 	$scope.addToCart = (product) => {
 		product.amount = 1;

@@ -1,5 +1,5 @@
-app.controller('aboutUs', function ($scope, $http) {
-    console.log('hi')
+app.controller('aboutUs', function ($scope, $http, $anchorScroll) {
+    anchorScroll('')
     $scope.sliderImages = [
         {
             url: 'http://via.placeholder.com/350x150'

@@ -1,6 +1,6 @@
-app.controller('product', function($scope, $routeParams, $products, $cart) {
+app.controller('product', function($scope, $routeParams, $products, $cart, $anchorScroll) {
 	getProductInfo();
-
+	$anchorScroll('')
 	$scope.increaseAmount = () => $scope.amount++;
 	$scope.decreaseAmount = () => ($scope.amount > 1 ? $scope.amount-- : null);
 
