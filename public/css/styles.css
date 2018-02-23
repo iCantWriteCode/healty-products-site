@@ -265,6 +265,24 @@ footer .nav-link {
   .goog-te-banner-frame.skiptranslate {display: none!important;} 
   body {top: 0px!important;}
 
+  @media (max-width: 667px) {
+	#google_translate_element {
+		bottom: calc(100% - 50% - 53px);
+		left: 16px!important;
+		width: 100%!important;
+		goog-te-gadget {
+			width:100%!important;
+		}
+		.skiptranslate {
+			width:100%!important;			
+		}
+		.goog-te-gadget-simple {
+			width: calc(100% - 32px)!important;
+			text-align: center;
+		}	
+	}
+}
+
 /* =====================================================
                        About Us
 ===================================================== */
