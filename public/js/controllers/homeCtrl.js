@@ -1,10 +1,10 @@
-app.controller('homeCtrl', function ($http, $scope) {
+app.controller('homeCtrl', function ($http, $scope, $anchorScroll) {
 	$http.get(`${url}/datum/intro`).then((res) => ($scope.intoText = res.data.content));
 
 	$http.get(`${url}/images/slider`).then((res) => ($scope.slider = res.data[0]));
 
 
-
+	$anchorScroll('')
 	$scope.slickConfig = {
 		enabled: true,
 		autoplay: true,

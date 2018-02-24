@@ -8,5 +8,5 @@ app.controller('navBar', function ($scope, $http, $location) {
 	$scope.isActive = function (viewLocation) {
 		return viewLocation === $location.path();
 	};
-	console.log($location.path())
+	//console.log($location.path())
 });

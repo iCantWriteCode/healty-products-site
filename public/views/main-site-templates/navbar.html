@@ -31,7 +31,6 @@
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <!-- <div id="google_translate_element"></div> -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" ng-repeat="category in navBar track by $index">
@@ -47,16 +46,6 @@
             data-target=".navbar-collapse.show">{{category.name}}</a>
         </div>
       </li>
-      <!-- <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false" ng-class="{ active: isActive('/products/{{category.slug}}/1')}">
-          Άλλα προιόντα
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" ng-repeat="category in otherProductsDropdown" href="products/{{category.slug}}/1" data-toggle="collapse"
-            data-target=".navbar-collapse.show">{{category.name}}</a>
-        </div>
-      </div> -->
       <li class="nav-item">
         <a class="nav-link" ng-href="about-us" ng-class="{ active: isActive('/about-us')}">About Us</a>
       </li>

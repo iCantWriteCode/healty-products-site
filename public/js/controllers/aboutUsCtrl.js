@@ -1,5 +1,5 @@
 app.controller('aboutUs', function ($scope, $http, $anchorScroll) {
-    anchorScroll('')
+    $anchorScroll('')
     $scope.sliderImages = [
         {
             url: 'http://via.placeholder.com/350x150'
@@ -14,7 +14,7 @@ app.controller('aboutUs', function ($scope, $http, $anchorScroll) {
             url: 'http://via.placeholder.com/350x150'
         }
     ]
-    console.log($scope.sliderImages)
+    //console.log($scope.sliderImages)
     $scope.slickConfig = {
         autoplay: false,
         arrows: true,
