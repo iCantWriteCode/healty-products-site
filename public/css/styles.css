@@ -107,7 +107,12 @@ footer .nav-link {
 .product-row button {
 	width: 100%;
 }
-
+.prdct-img {
+	height: 300px;
+    width: 100%;
+    background-size: cover;
+    display: block;
+}
 /* =====================================================
                     Product Page 
 ===================================================== */

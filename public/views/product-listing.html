@@ -7,8 +7,8 @@
 
     <div class="row product-row">
         <div class="col-lg-4 col-md-6 col-sm-12 product-col" ng-repeat="product in products track by $index">
-            <a ng-href="product/{{product.slug}}">
-                <img ng-src="{{url}}/products/featured-image/{{product._id}}" err-src="{{url}}/public/img/error-image.jpg" class="img-fluid">
+            <a ng-href="product/{{product.slug}}" class="prdct-img" style="background-image:url( {{url}}/products/featured-image/{{product._id}} )">
+                <!-- <img ng-src="{{url}}/products/featured-image/{{product._id}}" err-src="{{url}}/public/img/error-image.jpg" class="img-fluid"> -->
             </a>
             <div class="product-desc">
                 <p class="product-title">
