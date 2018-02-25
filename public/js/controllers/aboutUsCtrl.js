@@ -1,31 +1,33 @@
 app.controller('aboutUs', function ($scope, $http, $anchorScroll) {
+    $scope.aboutUs = {}
     $anchorScroll('')
-    $scope.sliderImages = [
+    $scope.aboutUs.images = [
         {
-            url: 'http://via.placeholder.com/350x150'
+            url: url + '/public/img/aboutUs/111.jpg'
         },
         {
-            url: 'http://via.placeholder.com/350x150'
+            url: url + '/public/img/aboutUs/112.jpg'
         },
         {
-            url: 'http://via.placeholder.com/350x150'
+            url: url + '/public/img/aboutUs/113.jpg'
         },
         {
-            url: 'http://via.placeholder.com/350x150'
+            url: url + '/public/img/aboutUs/115.jpg'
         },
         {
-            url: 'http://via.placeholder.com/350x150'
+            url: url + '/public/img/aboutUs/116.jpg'
         },
         {
-            url: 'http://via.placeholder.com/350x150'
+            url: url + '/public/img/aboutUs/117.jpg'
         }
     ]
     //console.log($scope.sliderImages)
     $scope.slickConfig = {
+        enabled: true,
         autoplay: false,
         arrows: true,
         dots: false,
-        slidesToShow: 4,
+        slidesToShow: 2,
         // centerPadding: "10px",
         draggable: false,
         infinite: true,
