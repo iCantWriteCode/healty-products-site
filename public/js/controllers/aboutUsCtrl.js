@@ -12,6 +12,12 @@ app.controller('aboutUs', function ($scope, $http, $anchorScroll) {
         },
         {
             url: 'http://via.placeholder.com/350x150'
+        },
+        {
+            url: 'http://via.placeholder.com/350x150'
+        },
+        {
+            url: 'http://via.placeholder.com/350x150'
         }
     ]
     //console.log($scope.sliderImages)
@@ -19,7 +25,7 @@ app.controller('aboutUs', function ($scope, $http, $anchorScroll) {
         autoplay: false,
         arrows: true,
         dots: false,
-        slidesToShow: 3,
+        slidesToShow: 4,
         // centerPadding: "10px",
         draggable: false,
         infinite: true,
