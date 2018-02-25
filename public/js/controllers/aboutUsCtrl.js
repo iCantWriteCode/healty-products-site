@@ -23,11 +23,12 @@ app.controller('aboutUs', function ($scope, $http, $anchorScroll) {
     ]
     //console.log($scope.sliderImages)
     $scope.slickConfig = {
+        initOnLoad: true,
         enabled: true,
         autoplay: false,
         arrows: true,
         dots: false,
-        slidesToShow: 2,
+        slidesToShow: 4,
         // centerPadding: "10px",
         draggable: false,
         infinite: true,
